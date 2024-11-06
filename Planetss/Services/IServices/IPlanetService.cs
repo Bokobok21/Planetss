@@ -3,6 +3,6 @@ namespace Planetss.Services.IServices
 {
     public interface IPlanetService
     {
-        public List<PlanetInformation> GetPlanetInformationlist();
+        public List<PlanetInformation> GetPlanetInformationList();
     }
 }

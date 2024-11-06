@@ -1,21 +1,28 @@
 ﻿using Planetss.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Planetss.Services.IServices;
+using Planetss.Services;
 
 namespace Planetss.Controllers
 {
 	public class PlanetsController : Controller
 	{
-		private IPlanetService _categoryService;
-		public PlanetsController(IPlanetService categoryService)
+		private IPlanetService _planetService;
+		public PlanetsController(IPlanetService PlanetService)
 		{
-			_categoryService = categoryService;
+			_planetService = PlanetService;
 		}
 
 		public IActionResult Index()
 		{
-			List<PlanetInformation> categoryList = _categoryService.GetPlanetInformationlist();
-			return View(categoryList);
+			List<PlanetInformation> planetList = _planetService.GetPlanetInformationList();
+			return View(planetList);
 		}
-	}
+
+        //public IActionResult Create()
+        //{
+        //    List<PlanetInformation> planetList = _planetService.GetPlanetInformationList();
+        //    return View(planetList);
+        //}
+    }
 }

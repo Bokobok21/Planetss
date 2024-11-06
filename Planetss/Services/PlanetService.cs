@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Planetss.Services
 {
-	public class PlanetService
+	public class PlanetService : IPlanetService
 	{
 		private ModelStateDictionary? _modelState;
 		private IPlanetRepository _repository;
@@ -14,7 +14,7 @@ namespace Planetss.Services
 		{
 			_repository = repository;
 		}
-		public List<PlanetInformation> GetCategoryList()
+		public List<PlanetInformation> GetPlanetInformationList()
 		{
 			return _repository.ToList();
 		}

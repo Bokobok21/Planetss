@@ -9,6 +9,6 @@ namespace Planetss.Data
         {
 
         }
-        public DbSet<PlanetInformation> Categories { get; set; } //Category is the entity and Categories is the table in the database
+        public DbSet<PlanetInformation> Planets { get; set; } //Category is the entity and Categories is the table in the database
     }
 }

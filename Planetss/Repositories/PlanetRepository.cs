@@ -4,7 +4,7 @@ using Planetss.Repositories.IRepositories;
 
 namespace Planetss.Repositories
 {
-	public class PlanetRepository  //:IPlanetReposotiry
+	public class PlanetRepository  : IPlanetRepository
 	{
 		private readonly ApplicationDbContext _context;
 
@@ -17,7 +17,7 @@ namespace Planetss.Repositories
 		{
 			try
 			{
-				_context.Categories.Add(planet);
+				_context.Planets.Add(planet);
 				return true;
 			}
 			catch
@@ -28,7 +28,7 @@ namespace Planetss.Repositories
 
 		public List<PlanetInformation> ToList()
 		{
-			return _context.Categories.ToList();
+			return _context.Planets.ToList();
 		}
 	}
 }
