@@ -1,4 +1,5 @@
 ﻿using Planetss.Entities;
+using Planetss.DTO;
 namespace Planetss.Repositories.IRepositories
 {
     public interface IPlanetRepository

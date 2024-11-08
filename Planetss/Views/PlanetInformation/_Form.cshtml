@@ -1,0 +1,43 @@
+﻿@model PlanetViewModel
+
+<div class="row justify-content-center">
+    <div class="col-6">
+        <div class="card mt-2">
+            <div class="card-header text-white bg-primary">
+                <h2>@(Model.Id != null ? $"Редактирай планета: {Model.Name}" : "Създай планета")</h2>
+            </div>
+            <div class="card-body">
+                <form asp-controller="PlanetInformation" asp-action="@(Model.Id != null ? "Update" : "Create")" method="post">
+                    <input type="hidden" asp-for="Id" />
+                   
+                    <div asp-validation-summary="All"></div>
+
+                    <div class="row mb-3 p-1">
+                        <label asp-for="Name" class="p-0"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="row mb-3 p-1">
+                        <label asp-for="MoonCount" class="p-0"></label>
+                        <input asp-for="MoonCount" class="form-control" />
+                        <span asp-validation-for="MoonCount" class="text-danger"></span>
+                    </div>
+                    <div class="row mb-3 p-1">
+                        <label asp-for="PopulationCount" class="p-0"></label>
+                        <input asp-for="PopulationCount" class="form-control" />
+                        <span asp-validation-for="PopulationCount" class="text-danger"></span>
+                    </div>
+                    @* https://getbootstrap.com/docs/5.0/layout/columns/ *@
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary form-control">@(Model.Id != null ? "Редактирай" : "Създай")</button>
+                        </div>
+                        <div class="col-4">
+                            <a asp-controller="PlanetInformation" asp-action="Index" class="btn btn-outline-secondary form-control">Към списъка</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

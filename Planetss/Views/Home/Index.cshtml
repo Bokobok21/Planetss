@@ -1,25 +1,8 @@
-﻿@using Planetss.Entities;
-@model List<PlanetInformation>
+﻿﻿@{
+    ViewData["Title"] = "Home Page";
+}
 
-<h1>Category List</h1>
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Planet Name</th>
-            <th>Moon Count</th>
-            <th>Population Count</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var obj in Model)
-        {
-            <tr>
-                <td>@obj.Name</td>
-                <td>@obj.MoonCount</td>
-                <td>@obj.PopulationCount</td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-﻿
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>﻿

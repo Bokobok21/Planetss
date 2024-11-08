@@ -5,6 +5,7 @@ using Planetss.Services.IServices;
 using Planetss.Services;
 using Microsoft.EntityFrameworkCore;
 using Planetss.Seeds;
+using Planetss.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

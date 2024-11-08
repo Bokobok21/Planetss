@@ -3,12 +3,14 @@ using Planetss.Services.IServices;
 using Planetss.Repositories.IRepositories;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Text.RegularExpressions;
+using Planetss.Helpers;
+using Planetss.DTO;
 
 namespace Planetss.Services
 {
 	public class PlanetService : IPlanetService
 	{
-		private ModelStateDictionary? _modelState;
+		private IValidationDictionary? _modelState;
 		private IPlanetRepository _repository;
 
 		public PlanetService(IPlanetRepository repository)
@@ -29,10 +31,10 @@ namespace Planetss.Services
             if (!String.IsNullOrEmpty(planet.Name) && planet.Name.ToLower() == "test")
                 _modelState.AddError("", "\"Test\" is an invalid value!");
 
-            Category? planet1 = _repository.FindByName(planet.Name);
+            PlanetInformation? planet1 = _repository.FindByName(planet.Name);
             if (planet1 != null)
             {
-                if (category.Id != planet1.Id)
+                if (planet.Id != planet1.Id)
                     _modelState.AddError("", $"Planet {planet1.Name} already exists.");
             }
 

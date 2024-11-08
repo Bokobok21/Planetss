@@ -1,0 +1,42 @@
+﻿@model List<PlanetInformation>
+<div class="row">
+    <div class="col-12">
+        <h1>Списък с категории</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 d-flex justify-content-end">
+        <a asp-controller="Category" asp-action="Create" class="btn btn-primary">Добави категория</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card mt-5 border-primary shadow-sm">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table id="category-table" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Име</th>
+                                <th>Брой луни</th>
+                                <th>Брой хора</th>
+                            </tr>
+                           @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th>@item.Name</th>
+                                    <th>@item.MoonCount</th>
+                                    <th>@item.PopulationCount</th>
+                                    <th>
+                                        <a class=" btn btn-danger" asp-route-id="@item.Id" asp-controller="Planets" asp-action="Delete">Delete</a>
+                                        <a class=" btn btn-danger" asp-route-id="@item.Id" asp-controller="Planets" asp-action="Update">Update</a>
+                                    </th>
+                                </tr>
+                            }
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

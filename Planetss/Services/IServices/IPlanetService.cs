@@ -1,4 +1,6 @@
 ﻿using Planetss.Entities;
+using Planetss.Helpers;
+using Planetss.DTO;
 namespace Planetss.Services.IServices
 {
     public interface IPlanetService

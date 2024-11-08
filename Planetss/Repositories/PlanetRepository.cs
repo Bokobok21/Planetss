@@ -1,5 +1,6 @@
 ﻿using Planetss.Data;
 using Planetss.Entities;
+using Planetss.DTO;
 using Planetss.Repositories.IRepositories;
 
 namespace Planetss.Repositories
@@ -58,7 +59,7 @@ namespace Planetss.Repositories
 
         public bool Delete(int id)
         {
-            PlanetInformation? planet = FindById(id)
+            PlanetInformation? planet = FindById(id);
             if (planet == null)
                 return false;
 
