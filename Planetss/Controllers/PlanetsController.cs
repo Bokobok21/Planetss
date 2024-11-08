@@ -22,7 +22,11 @@ namespace Planetss.Controllers
         //opravi categoryviewmodel 
         public IActionResult Index()
         {
-            return View();
+
+            List<PlanetInformation> list = _planetService.GetPlanetInformationList();
+         
+            return View(list);
+
         }
         public IActionResult Create()
         {
