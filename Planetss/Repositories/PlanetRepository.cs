@@ -135,5 +135,10 @@ namespace Planetss.Repositories
                 query = query.Where(s => s.PopulationCount == searchModel.PopulationCount);
             return query;
         }
+
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
+        }
     }
 }

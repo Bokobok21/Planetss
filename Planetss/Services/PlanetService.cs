@@ -57,8 +57,13 @@ namespace Planetss.Services
             try
             {
                 if (!ValidatePlanet(planet))
+                {
+
                     return false;
-                return _repository.Add(planet);
+                }
+                bool result = _repository.Add(planet);
+                _repository.SaveChanges();
+                return result;
             }
             catch
             {

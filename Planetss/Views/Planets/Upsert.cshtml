@@ -1,0 +1,40 @@
+﻿@model PlanetViewModel
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">@(Model.Id != null ? "Update" : "Create") Planet</h2>
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="row mb-3 p-1">
+            <label asp-for="Name" class="p-0"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="row mb-3 p-1">
+            <label asp-for="MoonCount" class="p-0"></label>
+            <input asp-for="MoonCount" class="form-control" />
+            <span asp-validation-for="MoonCount" class="text-danger"></span>
+        </div>
+        <div class="row mb-3 p-1">
+            <label asp-for="PopulationCount" class="p-0"></label>
+            <input asp-for="PopulationCount" class="form-control" />
+            <span asp-validation-for="PopulationCount" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary form-control">@(Model.Id != null ? "Update" : "Create")</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Planets" asp-action="Index" class="btn btn-outline-secondary form-control">Back To List</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial.cshtml" />
+    }
+}

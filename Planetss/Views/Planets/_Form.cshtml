@@ -7,9 +7,9 @@
                 <h2>@(Model.Id != null ? $"Редактирай планета: {Model.Name}" : "Създай планета")</h2>
             </div>
             <div class="card-body">
-                <form asp-controller="PlanetInformation" asp-action="@(Model.Id != null ? "Update" : "Create")" method="post">
+                <form asp-controller="Planets" asp-action="@(Model.Id != null ? "Update" : "Create")" method="post">
                     <input type="hidden" asp-for="Id" />
-                   
+
                     <div asp-validation-summary="All"></div>
 
                     <div class="row mb-3 p-1">
@@ -33,7 +33,7 @@
                             <button type="submit" class="btn btn-primary form-control">@(Model.Id != null ? "Редактирай" : "Създай")</button>
                         </div>
                         <div class="col-4">
-                            <a asp-controller="PlanetInformation" asp-action="Index" class="btn btn-outline-secondary form-control">Към списъка</a>
+                            <a asp-controller="Planets" asp-action="Index" class="btn btn-outline-secondary form-control">Към списъка</a>
                         </div>
                     </div>
                 </form>

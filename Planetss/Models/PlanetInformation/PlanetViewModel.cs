@@ -10,9 +10,11 @@ namespace Planetss.Models.PlanetInformation
         [Required(ErrorMessage = "Полето \"Име\" е задължително!")]
         [DisplayName("Име")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Полето \"Ред на показване\" е задължително!")]
-        [DisplayName("Ред на показване")]
+        [Required(ErrorMessage = "Полето \"Брой луни\" е задължително!")]
+        [DisplayName("Брой луни")]
         public int MoonCount { get; set; }
+        [Required(ErrorMessage = "Полето \"Население\" е задължително!")]
+        [DisplayName("Население")]
         public int PopulationCount { get; set; }
 
         public void PopulatePlanet(Planetss.Entities.PlanetInformation planet)

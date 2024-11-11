@@ -9,6 +9,7 @@ namespace Planetss.Repositories.IRepositories
         PlanetInformation? FindById(int? id);
         public bool Update(PlanetInformation planet);
         public bool Delete(int id);
+        public void SaveChanges();
         public PlanetInformation? FindByName(string? name);
         public SearchResult<PlanetInformation> GetPageData(PlanetSearch searchModel, string sortColumn, int start, int length);
     }
